@@ -59,7 +59,7 @@ if ( !function_exists( 'mks_button_sc' ) ) :
         $icon_type = ( $icon_type == 'fa' ) ? 'fa ' : '';
         $icon = $icon ? '<i class="'.$icon_type.$icon.'"></i>' : '';
         $nofollow = $nofollow ? 'rel="nofollow"' : '';
-        $output = '<a class="mks_button mks_button_'.$size.' '.$style.'" href="'.$url.'" target="'.$target.'" '.$inl_style.' '.$nofollow.'>' . $icon . $title . '</a>';
+        $output = '<a class="mks_button mks_button_'.$size.' '.$style.'" href="'.$url.'" target="'.$target.'" '.$inl_style.' '.$nofollow.'>' . $icon . wp_kses_post($title) . '</a>';
         return $output;
     }
 endif;
@@ -185,7 +185,7 @@ if ( !function_exists( 'mks_progressbar_sc' ) ) :
         extract( shortcode_atts(  array( 'name' => '', 'level' => '', 'value' => 80, 'color' => '#000000', 'height' => 20, 'style' => '' ), $atts ) );
         $output = '<div class="mks_progress_bar">';
         if ( !empty( $name ) || !empty( $level ) ) {
-            $output .= '<div class="mks_progress_label">'.$name.'<span class="mks_progress_name">'.$level.'</span></div>';
+            $output .= wp_kses_post( '<div class="mks_progress_label">'.$name.'<span class="mks_progress_name">'.$level.'</span></div>' );
         }
         $output .= '<div class="mks_progress_level '.esc_attr($style).'" style="height: '.absint( $height ).'px; background-color: '.mks_hex2rgba( $color, '0.5' ).';"><div class="mks_progress_level_set" style="width: '.absint( $value ).'%; background-color: '.esc_attr($color).';"></div></div>';
         $output .= '</div>';
@@ -209,7 +209,7 @@ if ( !function_exists( 'mks_accordion_item_sc' ) ) :
         extract( shortcode_atts(  array( 'title' => 'Title' ), $atts ) );
 
         $output = '<div class="mks_accordion_item">
-            <div class="mks_accordion_heading">'.esc_html($title).'<i class="fa fa-plus"></i><i class="fa fa-minus"></i></div>
+            <div class="mks_accordion_heading">'. wp_kses_post( esc_html($title) ).'<i class="fa fa-plus"></i><i class="fa fa-minus"></i></div>
                 <div class="mks_accordion_content">'.do_shortcode( $content ).'</div>
             </div>';
         return $output;

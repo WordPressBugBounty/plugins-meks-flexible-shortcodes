@@ -4,7 +4,7 @@ Plugin Name: Meks Flexible Shortcodes
 Plugin URI: https://mekshq.com
 Description: Add some cool elements to your post/page content. Smart styling options will make it fit into any theme design. Columns, buttons, higlights, social icons, tabs, toggles, accordions, pull quotes, progress bars, separators, dropcaps...
 Author: Meks
-Version: 1.3.6
+Version: 1.3.7
 Author URI: https://mekshq.com
 Text Domain: meks-flexible-shortcodes
 Domain Path: /languages
@@ -12,7 +12,7 @@ Domain Path: /languages
 
 define( 'MKS_SC_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 define( 'MKS_SC_PLUGIN_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
-define( 'MKS_SC_PLUGIN_VER', '1.3.6' );
+define( 'MKS_SC_PLUGIN_VER', '1.3.7' );
 
 add_action( 'init', 'mks_register_shortcodes' );
 
@@ -217,5 +217,5 @@ function mks_load_shortcodes_text_domain() {
 	load_plugin_textdomain( 'meks-flexible-shortcodes', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
-add_action( 'plugins_loaded', 'mks_load_shortcodes_text_domain' );
+add_action( 'init', 'mks_load_shortcodes_text_domain' );
 
