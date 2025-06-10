@@ -4,7 +4,7 @@ Donate link: http://mekshq.com/
 Tags: shortcode, shortcodes, tabs, toggles, accordions, social, buttons, dropcaps, icons
 Requires at least: 3.5
 Tested up to: 6.8
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -128,9 +128,11 @@ For any questions, error reports and suggestions please visit http://mekshq.com/
 
 == Changelog ==
 
+= 1.3.8 =
+* Patched a minor security issue
 
 = 1.3.7 =
-* WP 6.* compatibility tested
+* WP 6.8 compatibility tested
 * Patched a minor security issue
 
 = 1.3.6 =

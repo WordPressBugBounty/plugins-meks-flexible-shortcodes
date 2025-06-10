@@ -110,7 +110,7 @@ if ( !function_exists( 'mks_pullquote_sc' ) ) :
         );
         $atts = shortcode_atts( $defaults, $atts );
         
-        $output = '<div class="mks_pullquote mks_pullquote_'.esc_attr($atts['align']).'" style="width:'.absint( $atts['width'] ).'px; font-size: '.$atts['size'].'px; color: '.esc_attr($atts['txt_color']).'; background-color:'.esc_attr($atts['bg_color']).';">' . do_shortcode( $content ) . '</div>';
+        $output = '<div class="mks_pullquote mks_pullquote_'.esc_attr($atts['align']).'" style="width:'.absint( $atts['width'] ).'px; font-size: '.absint($atts['size']).'px; color: '.esc_attr($atts['txt_color']).'; background-color:'.esc_attr($atts['bg_color']).';">' . do_shortcode( $content ) . '</div>';
         return $output;
     }
 endif;
